@@ -19,6 +19,15 @@ const config = {
       },
     },
     extend: {
+      padding: {
+        // Padding utilities for Mobile, Tablet, and Desktop viewports
+        dy: '96px',
+        dx: '80px',
+        ty: '80px',
+        tx: '40px',
+        my: '40px',
+        mx: '20px',
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
