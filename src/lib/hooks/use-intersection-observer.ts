@@ -1,18 +1,15 @@
 import { RefObject, useEffect, useState } from "react";
 
-interface Args extends IntersectionObserverInit {
+export interface Args extends IntersectionObserverInit {
     freezeOnceVisible?: boolean;
 }
 
-function useIntersectionObserver(
+type Maybe<T> = T | undefined;
+
+export function useIO(
     elementRef: RefObject<Element>,
-    {
-        threshold = 0,
-        root = null,
-        rootMargin = "0%",
-        freezeOnceVisible = false,
-    }: Args,
-): IntersectionObserverEntry | undefined {
+    { threshold = 0, root = null, rootMargin = "0%", freezeOnceVisible = false }: Args
+): Maybe<IntersectionObserverEntry> {
     const [entry, setEntry] = useState<IntersectionObserverEntry>();
 
     const frozen = entry?.isIntersecting && freezeOnceVisible;
@@ -39,5 +36,3 @@ function useIntersectionObserver(
 
     return entry;
 }
-
-export default useIntersectionObserver;

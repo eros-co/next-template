@@ -8,7 +8,7 @@ export interface Dimensions {
 
 export type Device = "mobile" | "tablet" | "desktop";
 
-export default function useMediaQuery() {
+export function useMediaQuery() {
     const { sm, lg } = BREAKPOINTS;
     const [device, setDevice] = useState<Device | null>(null);
     const [dimensions, setDimensions] = useState<Dimensions | null>(null);
