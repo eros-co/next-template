@@ -1,1 +1,1 @@
-export { };
+export type { AppConfig, Route } from './AppConfig';
