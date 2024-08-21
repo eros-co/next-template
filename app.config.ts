@@ -11,4 +11,4 @@ const config: AppConfig = {
     }
 };
 
-export default config;
+export { config };
