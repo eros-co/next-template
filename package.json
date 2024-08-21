@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "git push origin && git push preview",
+    "deploy:preview": "git push preview"
   },
   "dependencies": {
     "@mantine/hooks": "^7.11.2",
