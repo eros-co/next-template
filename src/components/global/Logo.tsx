@@ -4,15 +4,19 @@ import Link from 'next/link'
 
 const DIMENSIONS = { w: 52, h: 52 }
 
-const Logo = ({ link, className, width = DIMENSIONS.w, height = DIMENSIONS.h }: LogoProps) => {
+const Logo = ({ w, h, src, link, className }: LogoProps) => {
+  const width = w ?? DIMENSIONS.w
+  const height = h ?? DIMENSIONS.h
+
   if (link) {
     return (
-      <Link href={config.routes[0].url} className={className}>
+      <Link href={config.routes[0].href}>
         <Image
           width={width}
           height={height}
-          src={'/parkstr-logo.png'}
+          src={src ?? `/images/${config.paths.logo}`}
           alt={`${config.name} Logo`}
+          className={className}
         />
         <span className="sr-only">{config.name}</span>
       </Link>
@@ -23,8 +27,9 @@ const Logo = ({ link, className, width = DIMENSIONS.w, height = DIMENSIONS.h }: 
         <Image
           width={width}
           height={height}
-          src={'/parkstr-logo.png'}
+          src={src ?? `/images/${config.paths.logo}`}
           alt={`${config.name} Logo`}
+          className={className}
         />
         <span className="sr-only">{config.name}</span>
       </>
@@ -35,9 +40,10 @@ const Logo = ({ link, className, width = DIMENSIONS.w, height = DIMENSIONS.h }: 
 export default Logo
 
 interface LogoProps {
-  children?: React.ReactNode
-  className?: string
-  width?: number | `${number}` | undefined
-  height?: number | `${number}` | undefined
   link?: boolean
+  className?: string
+  src?: string
+  w?: number | `${number}` | undefined
+  h?: number | `${number}` | undefined
+  children?: React.ReactNode
 }
