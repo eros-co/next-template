@@ -1,6 +1,8 @@
+type DomainSuffix = 'com' | 'org' | 'net';
+
 export interface AppConfig {
     name: string;
-    url: `https://${string}.com`,
+    url: `https://${string}.${DomainSuffix}`,
     ogImage: `https://${string}`,
     description: string;
     routes: Route[];
