@@ -35,6 +35,15 @@ const textVariants = cva('text-base font-normal leading-normal tracking-normal',
   },
 })
 
+type TextElement = 'span' | 'p' | 'div' | 'label'
+
+export interface TextProps
+  extends React.HTMLAttributes<TextElement>,
+    VariantProps<typeof textVariants> {
+  asChild?: boolean
+  as?: TextElement
+}
+
 const Text = React.forwardRef<HTMLElement, TextProps>(
   ({ size, align, weight, className, as: Tag = 'span', asChild = false, ...props }, ref) => {
     const Comp: React.ElementType = asChild ? Slot : Tag
@@ -44,14 +53,6 @@ const Text = React.forwardRef<HTMLElement, TextProps>(
     )
   },
 )
-
-type TextElement = 'span' | 'p' | 'div' | 'label'
-
-export interface TextProps
-  extends React.HTMLAttributes<TextElement>,
-    VariantProps<typeof textVariants> {
-  asChild?: boolean
-  as?: TextElement
-}
+Text.displayName = 'Text'
 
 export { Text, textVariants }

@@ -35,6 +35,15 @@ const headingVariants = cva('m-0', {
   },
 })
 
+type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
+export interface HeadingProps
+  extends React.HTMLAttributes<HTMLHeadingElement>,
+    VariantProps<typeof headingVariants> {
+  asChild?: boolean
+  as?: HeadingElement
+}
+
 const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
   ({ size, align, weight, className, as: Tag = 'h1', asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : Tag
@@ -48,14 +57,6 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     )
   },
 )
-
-type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-
-export interface HeadingProps
-  extends React.HTMLAttributes<HTMLHeadingElement>,
-    VariantProps<typeof headingVariants> {
-  asChild?: boolean
-  as?: HeadingElement
-}
+Heading.displayName = 'Heading'
 
 export { Heading, headingVariants }
