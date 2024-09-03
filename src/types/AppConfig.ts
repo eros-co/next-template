@@ -1,4 +1,4 @@
-type DomainSuffix = 'com' | 'org' | 'net';
+type DomainSuffix = 'com' | 'org' | 'net' | 'dev' | 'app' | 'io' | 'ai';
 
 export interface AppConfig {
     name: string;
