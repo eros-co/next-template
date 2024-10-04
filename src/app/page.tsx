@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { config } from 'app-config'
 import { Section } from '@/components/layout'
 import type { Metadata } from 'next'
