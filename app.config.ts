@@ -1,4 +1,4 @@
-import { AppConfig } from '@/types';
+import { AppConfig } from '@/lib/types';
 
 const config: AppConfig = {
     name: 'New Project',
