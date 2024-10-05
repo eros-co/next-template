@@ -1,43 +1,42 @@
+import React from 'react'
 import { cn } from '@/lib/utils'
+import { cva, type VariantProps } from 'class-variance-authority'
 
-const Section = ({
-  className,
-  sectionClassName,
-  unset,
-  secondary,
-  children,
-  ...props
-}: SectionProps) => {
-  const variants = cn(!unset && 'tw-container flex justify-center', className)
+const sectionVariants = cva('w-full', {
+  variants: {
+    size: {
+      sm: 'max-w-5xl',
+      md: 'max-w-7xl',
+      lg: 'max-w-8xl',
+    },
+  },
+  defaultVariants: {
+    size: 'md',
+  },
+})
 
-  if (unset) {
+export type SectionVariants = typeof sectionVariants
+export interface SectionProps
+  extends React.HTMLAttributes<HTMLElement>,
+    VariantProps<SectionVariants> {
+  classNames: {
+    section: string
+    div: string
+  }
+}
+
+const Section = React.forwardRef<HTMLElement, SectionProps>(
+  ({ children, classNames, ...props }, ref) => {
     return (
-      <section className={variants} {...props}>
-        {children}
+      <section
+        ref={ref}
+        className={cn('tw-container flex justify-center', classNames.section)}
+        {...props}
+      >
+        <div className={sectionVariants({ className: classNames.div })}>{children}</div>
       </section>
     )
-  }
+  },
+)
 
-  return (
-    <section
-      className={cn(
-        !unset && 'tw-container flex justify-center',
-        secondary && 'bg-layout-bg',
-        sectionClassName,
-      )}
-      {...props}
-    >
-      <div className={`${className} w-full max-w-7xl`}>{children}</div>
-    </section>
-  )
-}
-
-interface SectionProps extends React.ComponentPropsWithoutRef<'section'> {
-  children: React.ReactNode
-  className?: string
-  sectionClassName?: string
-  unset?: boolean
-  secondary?: boolean
-}
-
-export default Section
+export { Section, sectionVariants }
