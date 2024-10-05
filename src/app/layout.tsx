@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: `%s | ${config.name}`,
     default: `${config.name}`,
   },
-  description: `A ${config.name} website`,
+  description: config.description,
 }
 
 export default function RootLayout({
