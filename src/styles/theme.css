@@ -1,4 +1,11 @@
 @layer base {
+
+    /* PROJECT theme */
+    :root {
+        --theme-color-1: #000;
+    }
+
+    /* Shadcn Light Theme */
     :root {
         --background: 0 0% 100%;
         --foreground: 240 10% 3.9%;
@@ -27,6 +34,7 @@
         --chart-5: 27 87% 67%;
     }
 
+    /* Shadcn Dark Theme */
     .dark {
         --background: 240 10% 3.9%;
         --foreground: 0 0% 98%;
