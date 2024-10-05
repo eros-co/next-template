@@ -24,7 +24,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Clone this repo locally with the following command:
 
 ```bash
-bunx degit Brisklemonade/eros-next-template new-project
+bunx degit eros-co/next-template new-project
 ```
 
 1. Install dependencies using bun:
