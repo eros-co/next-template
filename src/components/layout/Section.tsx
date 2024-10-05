@@ -19,21 +19,21 @@ export type SectionVariants = typeof sectionVariants
 export interface SectionProps
   extends React.HTMLAttributes<HTMLElement>,
     VariantProps<SectionVariants> {
-  classNames: {
-    section: string
-    div: string
+  classNames?: {
+    section?: string
+    div?: string
   }
 }
 
 const Section = React.forwardRef<HTMLElement, SectionProps>(
-  ({ children, classNames, ...props }, ref) => {
+  ({ size, children, classNames, ...props }, ref) => {
     return (
       <section
         ref={ref}
-        className={cn('tw-container flex justify-center', classNames.section)}
+        className={cn('tw-container flex justify-center', classNames?.section)}
         {...props}
       >
-        <div className={sectionVariants({ className: classNames.div })}>{children}</div>
+        <div className={sectionVariants({ size, className: classNames?.div })}>{children}</div>
       </section>
     )
   },
