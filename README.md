@@ -1,7 +1,7 @@
 <p align="center">
 	<h1 align="center"><b>Eros Next Template</b></h1>
 <p align="center">
-    A NextJs open-source starter kit based on <a href="https://don-eros.webflow.io/">Don Eros Client Projects</a>.
+    A NextJs open-source starter kit used for <a href="https://doneros.co/">Eros Client Projects</a>.
     <br />
     <br />
     <a href="#whats-included"><strong>What's included</strong></a> ·
