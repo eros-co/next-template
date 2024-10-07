@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/core'
 import { config } from 'app-config'
 import { Inter as FontSans } from 'next/font/google'
 import { Header, Footer, PageLayout } from '@/components/global'
