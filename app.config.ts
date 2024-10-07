@@ -6,8 +6,7 @@ const config: AppConfig = {
     ogImage: "https://nextjs.org/og.jpg",
     description: "This is a new NextJS project.",
     routes: [
-        { title: "Home", href: "/" },
-        { title: "Test Link 2", href: '/#' }
+        { title: "Link", href: '/#' }
     ],
     paths: {
         logo: 'logo.png'
