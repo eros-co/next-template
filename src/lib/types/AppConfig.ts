@@ -1,6 +1,6 @@
 type DomainSuffix = 'com' | 'org' | 'net' | 'dev' | 'app' | 'io' | 'ai' | 'co';
 type CountryCode = '1';
-type PhoneNumber = `+${CountryCode}${number}${number}${number}-${number}${number}${number}-${number}${number}${number}${number}`;
+type PhoneNumber = `+${CountryCode}${number}`;
 type Email = `${string}@${string}.${DomainSuffix}`;
 
 export interface AppConfig {
